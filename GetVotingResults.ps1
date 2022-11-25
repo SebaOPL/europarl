@@ -67,4 +67,5 @@ Function GetEUParliamentMemberSessionVotingActionGrid([System.Xml.XmlElement[]]$
 
 $results = GetEUParliamentMemberSessionVotingActionGrid -ParliamentMembers $EUParliamentMembers -VotingDoc $VotingDocument
 
+if(Test-Path .\output.csv){ Remove-Item .\output.csv }
 $results | Export-Csv .\output.csv -NoClobber -NoTypeInformation -Encoding Unicode
